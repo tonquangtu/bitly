@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 // const bodyParser = require('body-parse');
 const logger = require('morgan');
 const helper = require('./helpers/helpers');
+const cronJob = require('./cronjob/cronjob');
+
 const dotEnv = require('dotenv');
 dotEnv.config();
 
@@ -13,8 +15,8 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
-helper.connectDb();
-
+const db = helper.connectDb();
+cronJob.deleteInFrequentlyLinksJob();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

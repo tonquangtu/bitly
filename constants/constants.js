@@ -26,4 +26,6 @@ module.exports = {
         notFound: 404,
         systemError: 505,
     },
+    expired_time: 7,
+    deleteInFrequentlyLinksJobName: 'delete_infrequently_link_job',
 };

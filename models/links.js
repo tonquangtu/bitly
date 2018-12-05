@@ -5,6 +5,7 @@ const LinkSchema = new Schema({
     short_link: { type: String, required: true },
     full_link: { type: String, required: true },
     gen_type: { type: String, default: 'base62' },
+    last_visited_at: { type: Date, default: Date.now },
     created_at: { type: Date, required: true, default: Date.now },
     updated_at: { type: Date, required: true, default: Date.now },
     deleted_at: { type: Date, default: null },

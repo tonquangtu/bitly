@@ -9,3 +9,8 @@ exports.addLink = (shortLink, fullLink) => {
   });
   return linkObj.save();
 };
+
+exports.deleteLinksByLastVisit = (time) => {
+  return Link.deleteMany({'last_visited_at': {$lte: time}});
+};
+

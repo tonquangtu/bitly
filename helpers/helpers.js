@@ -12,6 +12,8 @@ exports.connectDb = () => {
         // we're connected!
         console.log('MongoDB connection opened');
     });
+
+    return db;
 };
 
 exports.sendResponse = (res, response, status = constants.statusCode.ok) => {
